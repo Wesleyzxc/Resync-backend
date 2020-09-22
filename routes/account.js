@@ -1,10 +1,6 @@
 var express = require("express");
 var router = express.Router();
 
-router.get("/test", function (req, res, next) {
-  res.json({ Title: "Test" });
-});
-
 router.post("/login", function (req, res, next) {
   if (req.body.email === undefined || req.body.password === undefined) {
     return res.status(401).json({

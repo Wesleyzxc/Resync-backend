@@ -13,7 +13,9 @@ var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
 var indexRouter = require("./routes/index");
-var postRouter = require("./routes/post");
+var accountRouter = require("./routes/account");
+var organisationRouter = require("./routes/organisation");
+
 var app = express();
 
 const options = require("./knexfile.js");
@@ -48,7 +50,8 @@ app.use((req, res, next) => {
 });
 
 app.use("/", indexRouter);
-app.use("/", postRouter);
+app.use("/", accountRouter);
+app.use("/", organisationRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
