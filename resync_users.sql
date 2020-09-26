@@ -1,3 +1,12 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 26, 2020 at 05:51 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -31,6 +40,26 @@ CREATE TABLE `organisations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `organisations`
+--
+
+INSERT INTO `organisations` (`id`, `organisation_name`, `owner`, `address`, `city`, `state`, `country`, `submission_date`) VALUES
+(1, 'testatest', 'wes', NULL, 'Encamp', 'Encamp', 'Andorra', '2019-01-20 05:00:00'),
+(2, 'org 2', 'wes', 'na', 'Ainaro', 'Ainaro', 'East Timor', '2020-02-20 05:00:00'),
+(11, 'add from web', 'anyowner', NULL, NULL, NULL, NULL, '2020-03-20 05:00:00'),
+(12, 'new org', 'me', NULL, NULL, NULL, NULL, '2020-04-20 05:00:00'),
+(14, 'org with add', 'asdfas', NULL, NULL, NULL, NULL, '2020-05-20 05:00:00'),
+(25, 'orgwadd', 'testet', 'asdfas', NULL, NULL, NULL, '2020-06-20 05:00:00'),
+(26, 'allDeets', 'asdf', 'asaer', 'Rijan', 'Adrar', 'Algeria', '2020-06-20 05:00:00'),
+(27, '12ewd', 'as', NULL, NULL, NULL, NULL, '2020-07-20 05:00:00'),
+(35, 'alinfo', 'asdfa', 'asdff', 'Brisbane', 'Queensland', 'Australia', '2020-07-20 05:00:00'),
+(36, 'bb', 'gaa', 'alala', 'Melbourne', 'Melbourne', 'Australia', '2020-07-20 05:00:00'),
+(38, 'bestorg', 'bestowner', 'gad', NULL, 'Bourkou-Ennedi-Tibesti', 'Chad', '2020-09-20 05:00:00'),
+(39, 'newasdf', 'asdf', 'zv', NULL, 'Swains Island', 'American Samoa', '2020-09-25 10:43:58');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -42,6 +71,13 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `firstName`, `lastName`, `email`, `password`, `created_at`) VALUES
+(1, 'test', 'testLast', 'test@test.com', '$2a$08$m6zBEAkmXaAwMumdUeHEuuxTrMEY6jHi3J87NqiDmHuDFD7kvXCDq', '2020-09-19 07:18:42');
 
 --
 -- Indexes for dumped tables
