@@ -28,3 +28,6 @@ Other security features such as keys stored on /process.env has been uploaded fo
 
 ## Additional Information
 This server is hosted on localhost port 3000 without the use of certificate. The settings can be modified on `/bin/www` to include a certificate and/or through HTTPS.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
