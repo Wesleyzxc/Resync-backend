@@ -141,4 +141,36 @@ router.put("/org/update", function (req, res, next) {
   });
 });
 
+router.post("/org/delete", function (req, res, next) {
+  let id = req.headers.id;
+  if (!req.headers["authorization"])
+    return res.status(401).send({
+      error: "Missing the authorization header",
+    });
+  let token = req.headers["authorization"].replace("Bearer ", "");
+  if (id == undefined) {
+    return res.status(400).send({ error: "Missing id" });
+  }
+  req.jwt.verify(token, process.env.secret, function (err) {
+    if (err) {
+      return res.status(401).send({ error: "Invalid token" });
+    } else {
+      // add row
+      req
+        .db("organisations")
+        .where("id", id)
+        .del()
+        .then(() => {
+          res.status(200).send({
+            message: "Entry deleted",
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(404).send({ message: "Entry not found." });
+        });
+    }
+  });
+});
+
 module.exports = router;

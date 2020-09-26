@@ -278,6 +278,46 @@
       }
     }
   },
+  "/org/delete": {
+    "post": {
+      "tags": ["Organisation"],
+      "summary": "Deletes a new organisation",
+      "description": "For valid response, a token is required",
+      "operationId": "deleteOrganisation",
+      "produces": ["application/json", "application/xml"],
+      "parameters": [
+        {
+          "name": "authorization",
+          "in": "header",
+          "description": "Token of user",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "in": "header",
+          "description": "id of entry",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Organisation deleted",
+          "content": {
+            "application/json": {
+              "schema": {
+                "message": "Entry is deleted"
+              }
+            }
+          }
+        },
+        "400": { "description": "Missing id" },
+        "401": { "description": "Invalid or missing token" },
+        "404": { "description": "Entrry not found." }
+      }
+    }
+  },
   "definitions": {
     "Login": {
       "type": "object",
