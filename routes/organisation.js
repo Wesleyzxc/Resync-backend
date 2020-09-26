@@ -128,7 +128,7 @@ router.put("/org/update", function (req, res, next) {
           country: country,
         })
         .then((data) => {
-          if (data == 0) return res.status(400).send({ message: "This entry does not exist." });
+          if (data == 0) return res.status(404).send({ message: "This entry does not exist." });
           res.status(200).send({
             message: "Saved changes",
           });
